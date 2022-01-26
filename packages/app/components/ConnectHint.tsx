@@ -4,6 +4,7 @@ import { CHAINS } from "../config"
 import Card from "./Card"
 import Modal from "./Connect/Modal"
 import Button from "./Button"
+import utility from "../styles/utility.module.css"
 
 const ConnectHint: React.FC = () => {
   const [showModal, setShowModal] = useState(false)
@@ -19,7 +20,7 @@ const ConnectHint: React.FC = () => {
   }
 
   return (
-    <Card>
+    <Card className={!connectedChainId ? utility.pb8 : ''}>
       {!connectedChainId && (
         <Button primary onClick={() => setShowModal(true)}>
           Connect
